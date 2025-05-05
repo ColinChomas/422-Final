@@ -10,3 +10,10 @@ test("one row csv parses json file", ()=>{
   expect(fs.readFile(expected)).toBe(true);
 })
 
+
+test("test file is processed", () =>{
+    processChange("test_data/inbound/test_data.csv");
+
+    expect(fs.readFile("./test_data/processed/test_data.csv").toBe(true));
+
+})
