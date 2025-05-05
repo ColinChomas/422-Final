@@ -23,6 +23,7 @@ module.exports = {
         // Use chokidar because fs.watch is a pile of garbage
         const watcher = chokidar.watch(watched, {
             ignored: (path, stats) => {
+                // console.log('returned',stats);
                 return stats?.isFile() && !path.endsWith('.csv')
             },
             persistent: true
