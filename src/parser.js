@@ -16,8 +16,11 @@ module.exports = {
         this.processed = proc;
     },
     processChange: function (file) {
+        console.log("given file: " + file);
         const outputFile = path.resolve(this.output, path.basename(file).replace('.csv', '.json'));
+        console.log("outputFile:", outputFile);
         const processedFile = path.resolve(this.processed, path.basename(file));
+        console.log("processedFile",processedFile);
         let rows = [];
 
         fs.createReadStream(file)
